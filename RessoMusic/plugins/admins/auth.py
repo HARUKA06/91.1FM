@@ -1,16 +1,16 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from RessoMusic import app
-from RessoMusic.utils import extract_user, int_to_alpha
-from RessoMusic.utils.database import (
+from KaliMusic import app
+from KaliMusic.utils import extract_user, int_to_alpha
+from KaliMusic.utils.database import (
     delete_authuser,
     get_authuser,
     get_authuser_names,
     save_authuser,
 )
-from RessoMusic.utils.decorators import AdminActual, language
-from RessoMusic.utils.inline import close_markup
+from KaliMusic.utils.decorators import AdminActual, language
+from KaliMusic.utils.inline import close_markup
 from config import BANNED_USERS, adminlist
 
 
@@ -87,3 +87,4 @@ async def authusers(client, message: Message, _):
             text += f"{j}➤ {user}[<code>{user_id}</code>]\n"
             text += f"   {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
         await mystic.edit_text(text, reply_markup=close_markup(_))
+
